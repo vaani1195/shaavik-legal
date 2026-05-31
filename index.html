@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaavik Legal | Business &amp; Legal Support Consultancy</title>
+    <meta name="description" content="Practical business and legal support for contracts, disputes, payment recovery, lease and tenancy matters, intellectual property support, immigration support and family-related matters. Based in London, United Kingdom.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shaavik Legal | Business &amp; Legal Support Consultancy">
+    <meta property="og:description" content="Practical business and legal support for individuals and businesses across a range of commercial and personal matters.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://www.shaaviklegal.com/">
+    <meta property="og:image" content="assets/logo-full.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shaavik Legal | Business &amp; Legal Support Consultancy">
+    <meta name="twitter:description" content="Practical business and legal support for individuals and businesses across a range of commercial and personal matters.">
+
+    <link rel="icon" type="image/png" href="assets/logo-full.png">
+
+    <!-- Fonts: Playfair Display (serif headings) + Manrope (sans-serif body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================
+           Design Tokens
+           ========================= */
+        :root {
+            --navy-900: #06152D;            /* page background */
+            --navy-800: #0A1D3D;            /* section / card surfaces */
+            --navy-700: #0F2447;            /* elevated cards */
+            --navy-600: #15305B;            /* borders, dividers (subtle) */
+            --gold: #D4A64A;                /* primary accent */
+            --gold-soft: #E6BE6A;           /* hover */
+            --gold-dim: rgba(212, 166, 74, 0.35);
+            --gold-line: rgba(212, 166, 74, 0.22);
+
+            --text: #F2EEE6;                /* off-white */
+            --text-muted: #B9BFCC;          /* secondary text */
+            --text-dim: #8A92A3;            /* tertiary */
+
+            --font-display: 'Playfair Display', 'Georgia', serif;
+            --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+            --container: 1200px;
+            --radius: 12px;
+            --radius-sm: 8px;
+
+            --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+            --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* =========================
+           Base / Reset
+           ========================= */
+        *,
+        *::before,
+        *::after { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+        body {
+            margin: 0;
+            background: var(--navy-900);
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.65;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            line-height: 1.2;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+
+        p { margin: 0; }
+
+        .container {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { padding: 110px 0; position: relative; }
+
+        /* Subtle gold divider used between sections */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 24px;
+            opacity: 0.7;
+        }
+
+        .eyebrow {
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: block;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 3.4vw, 40px);
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 64px;
+            font-size: 16px;
+        }
+
+        /* =========================
+           Buttons
+           ========================= */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: all 0.25s var(--ease);
+            border: 1px solid transparent;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy-900);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-soft);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(212, 166, 74, 0.28);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            border-color: var(--gold-line);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* =========================
+           Navigation
+           ========================= */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(6, 21, 45, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+        }
+
+        .nav.scrolled {
+            border-bottom-color: var(--gold-line);
+            background: rgba(6, 21, 45, 0.96);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 78px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-logo {
+            height: 72px;
+            width: auto;
+            display: block;
+            transition: opacity 0.2s var(--ease);
+        }
+
+        .brand:hover .brand-logo { opacity: 0.85; }
+
+        .brand-logo-footer { height: 96px; }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.2s var(--ease);
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--gold); }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .nav-cta { margin-left: 16px; }
+
+        .nav-cta .btn { padding: 12px 22px; font-size: 12px; }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            padding: 8px;
+            color: var(--gold);
+        }
+
+        .hamburger svg { width: 26px; height: 26px; }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            top: 78px;
+            left: 0;
+            right: 0;
+            background: var(--navy-800);
+            border-bottom: 1px solid var(--gold-line);
+            padding: 24px;
+            transform: translateY(-110%);
+            transition: transform 0.35s var(--ease);
+            z-index: 99;
+        }
+
+        .mobile-menu.open { transform: translateY(0); }
+
+        .mobile-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 14px 0;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--navy-600);
+        }
+
+        .mobile-menu a:last-child { border-bottom: none; }
+
+        .mobile-menu .btn {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        /* =========================
+           Hero
+           ========================= */
+        .hero {
+            padding: 180px 0 110px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 75% 40%, rgba(212, 166, 74, 0.08), transparent 55%),
+                radial-gradient(ellipse at 20% 80%, rgba(20, 50, 100, 0.25), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-headline {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.08;
+            margin-bottom: 22px;
+        }
+
+        .hero-headline .accent {
+            color: var(--gold);
+            display: block;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .hero-sub {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+
+        .hero-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 28px;
+        }
+
+        .hero-highlights li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .check {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: var(--gold);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-visual {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                0 0 0 1px var(--gold-line),
+                0 0 60px rgba(212, 166, 74, 0.08);
+            border: 1px solid var(--gold-line);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, transparent 55%, rgba(6, 21, 45, 0.35)),
+                radial-gradient(circle at 50% 50%, transparent 55%, rgba(6, 21, 45, 0.25));
+            pointer-events: none;
+        }
+
+        /* Subtle inner gold corner accents */
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(212, 166, 74, 0.12);
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* =========================
+           About
+           ========================= */
+        .about { background: var(--navy-800); }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            border: 1px solid var(--gold-line);
+            box-shadow:
+                var(--shadow-card),
+                0 0 0 1px var(--gold-line),
+                0 0 60px rgba(212, 166, 74, 0.06);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(212, 166, 74, 0.12);
+            border-radius: 6px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 60%, rgba(6, 21, 45, 0.25));
+            pointer-events: none;
+        }
+
+        .about-content .eyebrow { text-align: left; }
+
+        .about-content h2 {
+            font-size: clamp(28px, 3.4vw, 38px);
+            text-align: left;
+            margin-bottom: 22px;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .approach {
+            margin-top: 36px;
+            background: var(--navy-700);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+
+        .approach-title {
+            font-family: var(--font-body);
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .approach-item {
+            text-align: center;
+            padding: 6px;
+        }
+
+        .approach-icon {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: rgba(212, 166, 74, 0.1);
+            border: 1px solid var(--gold-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+
+        .approach-icon svg { width: 20px; height: 20px; }
+
+        .approach-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.35;
+        }
+
+        /* =========================
+           Services
+           ========================= */
+        .services-block {
+            margin-top: 24px;
+        }
+
+        .services-label {
+            text-align: center;
+            font-family: var(--font-body);
+            font-size: 12px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 32px;
+            position: relative;
+            display: block;
+        }
+
+        .services-label::before,
+        .services-label::after {
+            content: '';
+            display: inline-block;
+            width: 80px;
+            height: 1px;
+            background: var(--gold-line);
+            vertical-align: middle;
+            margin: 0 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* Centre a lone orphan card on the last row (7 items in 3 columns => 7th is alone) */
+        .services-grid > .service-card:last-child:nth-child(3n+1) {
+            grid-column: 2;
+        }
+
+        .services-grid.individuals {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--navy-800);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s var(--ease);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 22px;
+            border-radius: 50%;
+            background: rgba(212, 166, 74, 0.08);
+            border: 1px solid var(--gold-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s var(--ease);
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(212, 166, 74, 0.15);
+            transform: scale(1.05);
+        }
+
+        .service-icon svg { width: 28px; height: 28px; }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            color: var(--text);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* =========================
+           How It Works
+           ========================= */
+        .how { background: var(--navy-800); }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .how-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .how-step-circle {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--navy-700);
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            color: var(--gold);
+            position: relative;
+            transition: all 0.3s var(--ease);
+        }
+
+        .how-step:hover .how-step-circle {
+            background: var(--gold);
+            color: var(--navy-900);
+        }
+
+        .how-step-circle svg { width: 32px; height: 32px; }
+
+        .how-step-num {
+            position: absolute;
+            top: -10px;
+            right: -6px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--navy-900);
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--navy-800);
+        }
+
+        .how-step h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            color: var(--text);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .how-step p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            padding: 0 8px;
+        }
+
+        .how-arrow {
+            position: absolute;
+            top: 44px;
+            right: -38px;
+            color: var(--gold);
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .how-arrow svg { width: 28px; height: 28px; }
+
+        /* =========================
+           FAQs
+           ========================= */
+        .faq-layout {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .faq-list {
+            background: var(--navy-800);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius);
+            padding: 12px 24px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--navy-600);
+        }
+
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 22px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: var(--text);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            text-align: left;
+            transition: color 0.2s var(--ease);
+        }
+
+        .faq-question:hover { color: var(--gold); }
+
+        .faq-chevron {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+            transition: transform 0.3s var(--ease);
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s var(--ease);
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 22px;
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.7;
+            max-width: 92%;
+        }
+
+        .faq-cta {
+            background: var(--navy-800);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius);
+            padding: 44px 32px;
+            text-align: center;
+        }
+
+        .faq-cta-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(212, 166, 74, 0.1);
+            border: 1px solid var(--gold-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            color: var(--gold);
+        }
+
+        .faq-cta-icon svg { width: 26px; height: 26px; }
+
+        .faq-cta h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .faq-cta p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           Contact
+           ========================= */
+        .contact { background: var(--navy-800); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h2 {
+            text-align: left;
+            font-size: clamp(26px, 3vw, 34px);
+            margin-bottom: 18px;
+        }
+
+        .contact-info .eyebrow { text-align: left; }
+
+        .contact-info > p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(212, 166, 74, 0.08);
+            border: 1px solid var(--gold-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg { width: 18px; height: 18px; }
+
+        .contact-label {
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-value {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.55;
+        }
+
+        .contact-value a { color: var(--text); transition: color 0.2s var(--ease); }
+        .contact-value a:hover { color: var(--gold); }
+
+        /* Form */
+        .contact-form {
+            background: var(--navy-700);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius);
+            padding: 40px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-field {
+            margin-bottom: 16px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            background: var(--navy-800);
+            border: 1px solid var(--navy-600);
+            border-radius: 6px;
+            padding: 14px 16px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 14px;
+            transition: border-color 0.2s var(--ease);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder { color: var(--text-dim); }
+
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D4A64A' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .form-select:invalid { color: var(--text-dim); }
+        .form-select option { color: var(--text); background: var(--navy-800); }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 110px;
+            font-family: inherit;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           Footer
+           ========================= */
+        .footer {
+            background: var(--navy-900);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--gold-line);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-bottom: 36px;
+            border-bottom: 1px solid var(--navy-600);
+            margin-bottom: 30px;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            justify-content: flex-end;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer-contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+        }
+
+        .footer-contact-item a { transition: color 0.2s var(--ease); }
+        .footer-contact-item a:hover { color: var(--gold); }
+
+        .footer-disclaimer {
+            font-size: 12px;
+            color: var(--text-dim);
+            line-height: 1.65;
+            max-width: 70%;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-top: 8px;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: var(--text-dim);
+            white-space: nowrap;
+        }
+
+        /* =========================
+           Responsive
+           ========================= */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-visual,
+            .about-image { max-width: 480px; margin: 0 auto; }
+
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .how-steps {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .nav-links,
+            .nav-cta { display: none; }
+            .hamburger { display: block; }
+
+            section { padding: 80px 0; }
+
+            .hero { padding: 140px 0 80px; }
+
+            .how-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px 16px;
+            }
+            .how-arrow { display: none; }
+
+            .approach-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px 12px;
+            }
+
+            .faq-layout { grid-template-columns: 1fr; }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-contact { justify-content: flex-start; }
+            .footer-disclaimer { max-width: 100%; }
+            .footer-bottom { flex-direction: column; }
+        }
+
+        @media (max-width: 560px) {
+            .container { padding: 0 20px; }
+
+            .services-grid,
+            .services-grid.individuals {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-highlights { grid-template-columns: 1fr; }
+
+            .hero-actions { flex-direction: column; }
+            .hero-actions .btn { width: 100%; }
+
+            .approach-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .how-steps { grid-template-columns: 1fr; }
+
+            .form-row { grid-template-columns: 1fr; }
+
+            .contact-form { padding: 28px 22px; }
+
+            .services-label::before,
+            .services-label::after { width: 30px; margin: 0 12px; }
+
+            .brand-logo { height: 42px; }
+            .brand-logo-footer { height: 52px; }
+        }
+
+        /* Reveal animation on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============= NAV ============= -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#home" class="brand" aria-label="Shaavik Legal — Business and Legal Support Consultancy">
+                <img src="assets/logo-full.png" alt="Shaavik Legal — Business &amp; Legal Support Consultancy" class="brand-logo">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active" data-nav>Home</a></li>
+                <li><a href="#about" data-nav>About</a></li>
+                <li><a href="#services" data-nav>Services</a></li>
+                <li><a href="#how" data-nav>How It Works</a></li>
+                <li><a href="#faqs" data-nav>FAQs</a></li>
+                <li><a href="#contact" data-nav>Contact</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="https://calendly.com/shaaviklegal-info/30min" target="_blank" rel="noopener" class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    Free 15-Min Discussion
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="3" y1="7" x2="21" y2="7"/>
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="17" x2="21" y2="17"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" data-mobile-nav>Home</a></li>
+            <li><a href="#about" data-mobile-nav>About</a></li>
+            <li><a href="#services" data-mobile-nav>Services</a></li>
+            <li><a href="#how" data-mobile-nav>How It Works</a></li>
+            <li><a href="#faqs" data-mobile-nav>FAQs</a></li>
+            <li><a href="#contact" data-mobile-nav>Contact</a></li>
+        </ul>
+        <a href="https://calendly.com/shaaviklegal-info/30min" target="_blank" rel="noopener" class="btn btn-primary">Free 15-Min Discussion</a>
+    </div>
+
+    <!-- ============= HERO ============= -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content reveal">
+                    <h1 class="hero-headline">
+                        Legal &amp; Business Problems?
+                        <span class="accent">Get Clear Next Steps.</span>
+                    </h1>
+                    <p class="hero-sub">
+                        Practical business and legal support for individuals, landlords, tenants and small businesses.
+                    </p>
+
+                    <ul class="hero-highlights">
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Contracts &amp; Disputes
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Business Legal Support
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Payment Recovery
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Immigration Support
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Lease &amp; Tenancy Issues
+                        </li>
+                        <li>
+                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
+                            </svg>
+                            Family &amp; Personal Matters
+                        </li>
+                    </ul>
+
+                    <div class="hero-actions">
+                        <a href="https://wa.me/447496027306" target="_blank" rel="noopener" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+                            </svg>
+                            WhatsApp Us
+                        </a>
+                        <a href="#about" class="btn btn-outline" data-nav>Learn More</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal">
+                    <img src="assets/hero-chess.jpg" alt="Gold chess king piece leading a row of silver pawns — strategy and leadership">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= ABOUT ============= -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="assets/about-scales.jpg" alt="Brass scales of justice on a polished wooden desk with leather-bound legal volumes">
+                </div>
+                <div class="about-content reveal">
+                    <span class="eyebrow">About Shaavik Legal</span>
+                    <h2>Practical. Commercial.<br>Solutions Focused.</h2>
+                    <p>
+                        Shaavik Legal is a business and legal support consultancy providing practical,
+                        commercially minded support to individuals, landlords, tenants, entrepreneurs
+                        and small businesses.
+                    </p>
+                    <p>
+                        We focus on clear communication, sensible risk management and practical next
+                        steps. Our aim is to help clients understand their position early, avoid
+                        unnecessary escalation where possible, and deal with business and legal
+                        issues in a structured way.
+                    </p>
+                    <p>
+                        We do not just tell you what the law says — we help you understand what it
+                        means for you and what you can do next.
+                    </p>
+
+                    <div class="approach">
+                        <div class="approach-title">Our Approach</div>
+                        <div class="approach-grid">
+                            <div class="approach-item">
+                                <div class="approach-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="approach-label">Clear<br>Communication</div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18V5l12-2v13"/>
+                                        <circle cx="6" cy="18" r="3"/>
+                                        <circle cx="18" cy="16" r="3"/>
+                                    </svg>
+                                </div>
+                                <div class="approach-label">Commercial<br>Thinking</div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 20l-5.5-5.5a1 1 0 0 1 0-1.4L9 7.6V11h6V4l5.5 5.5a1 1 0 0 1 0 1.4L15 16.4V13H9z"/>
+                                    </svg>
+                                </div>
+                                <div class="approach-label">Practical<br>Next Steps</div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                </div>
+                                <div class="approach-label">Confidential<br>&amp; Reliable</div>
+                            </div>
+                            <div class="approach-item">
+                                <div class="approach-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <circle cx="12" cy="12" r="6"/>
+                                        <circle cx="12" cy="12" r="2"/>
+                                    </svg>
+                                </div>
+                                <div class="approach-label">Efficient<br>&amp; Focused</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= SERVICES ============= -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="reveal">
+                <div class="divider"></div>
+                <span class="eyebrow">Our Services</span>
+                <h2 class="section-title">Practical support for business and legal issues</h2>
+                <p class="section-subtitle">
+                    From contracts and disputes to payment recovery, lease matters and negotiation support.
+                </p>
+            </div>
+
+            <!-- For Businesses -->
+            <div class="services-block reveal">
+                <span class="services-label">For Businesses</span>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="8" y1="13" x2="16" y2="13"/>
+                                <line x1="8" y1="17" x2="13" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3>Commercial Contracts</h3>
+                        <p>Drafting, reviewing and negotiating contracts, agreements and commercial documents.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Business Disputes</h3>
+                        <p>Correspondence, settlement discussions and practical dispute resolution support.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 7c0-3-3-4-6-4S6 4 6 7"/>
+                                <path d="M6 7h12"/>
+                                <path d="M9 12h6"/>
+                                <path d="M9 15h6"/>
+                                <path d="M14 21s-4 0-4-4V7"/>
+                            </svg>
+                        </div>
+                        <h3>Payment Recovery</h3>
+                        <p>Support with unpaid invoices, overdue payments and pre-action correspondence.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/>
+                            </svg>
+                        </div>
+                        <h3>Lease &amp; Tenancy Issues</h3>
+                        <p>Support for landlords, tenants and small businesses dealing with premises-related issues.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 3l4 4-4 4"/>
+                                <path d="M8 21l-4-4 4-4"/>
+                                <path d="M4 17h16"/>
+                                <path d="M20 7H4"/>
+                            </svg>
+                        </div>
+                        <h3>Negotiation Support</h3>
+                        <p>Commercial negotiations, settlement proposals and conflict resolution.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3>Business Legal Support</h3>
+                        <p>General commercial guidance, risk review and practical next steps for your business.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <!-- Certificate / seal of registration — IP & trademark theme -->
+                                <circle cx="12" cy="9" r="6"/>
+                                <path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/>
+                                <path d="M12 6v6"/>
+                                <path d="M9.5 9h5"/>
+                            </svg>
+                        </div>
+                        <h3>Intellectual Property Support</h3>
+                        <p>Support with copyright registration, trademark searches, UK IPO filing assistance and protecting business brands and creative assets.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- For Individuals -->
+            <div class="services-block reveal" style="margin-top: 60px;">
+                <span class="services-label">For Individuals</span>
+                <div class="services-grid individuals">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3>Immigration Support</h3>
+                        <p>Help with understanding application requirements, organising documents, preparing supporting information and practical next steps.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>Family &amp; Personal Matters</h3>
+                        <p>Support with divorce-related paperwork, correspondence, settlement discussions and understanding your next steps.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= HOW IT WORKS ============= -->
+    <section class="how" id="how">
+        <div class="container">
+            <div class="reveal">
+                <div class="divider"></div>
+                <span class="eyebrow">How It Works</span>
+                <h2 class="section-title">A simple, clear process to help you move forward</h2>
+                <p class="section-subtitle">Five focused steps from first message to clear next actions.</p>
+            </div>
+
+            <div class="how-steps reveal">
+                <div class="how-step">
+                    <div class="how-step-circle">
+                        <span class="how-step-num">1</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <h4>Get in Touch</h4>
+                    <p>Send us a brief message by WhatsApp, email or the contact form with some details about your issue.</p>
+                    <div class="how-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-step-circle">
+                        <span class="how-step-num">2</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        </svg>
+                    </div>
+                    <h4>We Understand</h4>
+                    <p>We ask the right questions and understand your situation, objectives and any urgent deadlines.</p>
+                    <div class="how-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-step-circle">
+                        <span class="how-step-num">3</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                    </div>
+                    <h4>Free 15-Min Discussion</h4>
+                    <p>We have a 15-minute call to discuss your issue and provide initial thoughts and options.</p>
+                    <div class="how-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-step-circle">
+                        <span class="how-step-num">4</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                    </div>
+                    <h4>Clear Next Steps</h4>
+                    <p>You receive practical advice and a clear plan of action tailored to your situation.</p>
+                    <div class="how-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                            <polyline points="12 5 19 12 12 19"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-step-circle">
+                        <span class="how-step-num">5</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h4>Ongoing Support</h4>
+                    <p>If needed, we continue to support you or guide you to the right regulated professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= FAQs ============= -->
+    <section class="faqs" id="faqs">
+        <div class="container">
+            <div class="reveal">
+                <div class="divider"></div>
+                <span class="eyebrow">Frequently Asked Questions</span>
+                <h2 class="section-title">Clear answers to common questions</h2>
+                <p class="section-subtitle">If you can&rsquo;t find what you&rsquo;re looking for, get in touch for a free 15-minute discussion.</p>
+            </div>
+
+            <div class="faq-layout reveal">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What types of matters do you help with?</span>
+                            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                We support individuals and businesses with contracts, business disputes, payment recovery, lease and tenancy issues, negotiation support, immigration support and family or personal matters.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Are you a law firm?</span>
+                            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Shaavik Legal is a business and legal support consultancy. It is not an SRA-regulated law firm.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What support do you provide?</span>
+                            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                We help clients understand the issue, organise documents, prepare correspondence, consider practical options and identify sensible next steps.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if my matter requires regulated legal advice or a solicitor?</span>
+                            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                If a matter requires regulated legal advice, reserved legal activity or solicitor-led representation, this will be explained clearly and handled through the appropriate regulated route.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I get started?</span>
+                            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                Send us a brief message by WhatsApp, email or the enquiry form. Please include a short summary of the issue and any important deadline so we can understand how best to assist.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="faq-cta">
+                    <div class="faq-cta-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h3>Still have a question?</h3>
+                    <p>Get in touch for a free 15-minute discussion. We&rsquo;ll help you understand your position and what to do next.</p>
+                    <a href="https://wa.me/447496027306" target="_blank" rel="noopener" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-1 1.1-.2.2-.4.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.3 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/>
+                        </svg>
+                        WhatsApp Us
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= CONTACT ============= -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <span class="eyebrow">Contact Shaavik Legal</span>
+                    <h2>Get in touch</h2>
+                    <p>If you need practical support with a contract, dispute, payment issue, lease matter, immigration issue, family matter or business concern, contact us for an initial discussion.</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">WhatsApp / Phone</div>
+                                <div class="contact-value"><a href="tel:+447496027306">+44 7496 027306</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <div class="contact-value"><a href="mailto:info@shaaviklegal.com">info@shaaviklegal.com</a></div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="2" y1="12" x2="22" y2="12"/>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Website</div>
+                                <div class="contact-value">www.shaaviklegal.com</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Registered &amp; Correspondence Address</div>
+                                <div class="contact-value">
+                                    London, 
+                                    United Kingdom
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Consultations</div>
+                                <div class="contact-value">Meetings and consultations are by appointment only.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Enquiry Form -->
+                <form class="contact-form reveal" id="enquiryForm" action="https://formspree.io/f/mpqypdod" method="POST" novalidate>
+                    <div class="form-row">
+                        <div>
+                            <input type="text" class="form-input" name="name" placeholder="Your Name*" required>
+                        </div>
+                        <div>
+                            <input type="email" class="form-input" name="email" placeholder="Email Address*" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div>
+                            <input type="tel" class="form-input" name="phone" placeholder="Phone Number">
+                        </div>
+                        <div>
+                            <select class="form-select" name="type" required>
+                                <option value="" disabled selected>Type of Issue*</option>
+                                <option>Commercial Contracts</option>
+                                <option>Business Disputes</option>
+                                <option>Payment Recovery</option>
+                                <option>Lease &amp; Tenancy Issues</option>
+                                <option>Negotiation Support</option>
+                                <option>Business Legal Support</option>
+                                <option>Intellectual Property Support</option>
+                                <option>Immigration Support</option>
+                                <option>Family &amp; Personal Matters</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <textarea class="form-textarea" name="summary" placeholder="Brief Summary of Your Issue*" required></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" class="form-input" name="deadline" placeholder="Any Key Deadline / Date (if any)">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary form-submit">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============= FOOTER ============= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="#home" class="brand">
+                    <img src="assets/logo-full.png" alt="Shaavik Legal — Business &amp; Legal Support Consultancy" class="brand-logo brand-logo-footer">
+                </a>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:+447496027306">+44 7496 027306</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:info@shaaviklegal.com">info@shaaviklegal.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span>www.shaaviklegal.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>London, United Kingdom</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">
+                    Shaavik Legal is a business and legal support consultancy and is not an SRA-regulated law firm. Where a matter requires reserved legal activity or solicitor-led representation, this will be explained and handled through the appropriate regulated route.
+                </p>
+                <div class="footer-copyright">&copy; 2025 Shaavik Legal. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // =========================
+        // Sticky nav border on scroll
+        // =========================
+        const nav = document.getElementById('nav');
+        const onScroll = () => {
+            if (window.scrollY > 20) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        // =========================
+        // Mobile menu toggle
+        // =========================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        document.querySelectorAll('[data-mobile-nav]').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // =========================
+        // Active nav link on scroll
+        // =========================
+        const sections = ['home', 'about', 'services', 'how', 'faqs', 'contact'];
+        const navLinks = document.querySelectorAll('.nav-links a[data-nav]');
+
+        const setActive = () => {
+            const scrollPos = window.scrollY + 120;
+            let current = sections[0];
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollPos) current = id;
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            });
+        };
+        window.addEventListener('scroll', setActive, { passive: true });
+        setActive();
+
+        // =========================
+        // FAQ accordion
+        // =========================
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const btn = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            btn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    other.classList.remove('open');
+                    other.querySelector('.faq-answer').style.maxHeight = null;
+                    other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // =========================
+        // Reveal on scroll (IntersectionObserver)
+        // =========================
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            reveals.forEach(el => observer.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('visible'));
+        }
+
+        // =========================
+        // Form submission → Formspree
+        // Submissions arrive at the email address registered to the Formspree
+        // endpoint configured in the form's `action` attribute.
+        // =========================
+        const form = document.getElementById('enquiryForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const submitBtn = form.querySelector('.form-submit');
+            const original = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    submitBtn.textContent = 'Thank you — we will be in touch.';
+                    form.reset();
+                    setTimeout(() => {
+                        submitBtn.textContent = original;
+                        submitBtn.disabled = false;
+                    }, 5000);
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    const msg = (data.errors && data.errors[0] && data.errors[0].message) || 'Something went wrong. Please try again.';
+                    submitBtn.textContent = msg;
+                    setTimeout(() => {
+                        submitBtn.textContent = original;
+                        submitBtn.disabled = false;
+                    }, 4000);
+                }
+            } catch (err) {
+                submitBtn.textContent = 'Network error. Please try again.';
+                setTimeout(() => {
+                    submitBtn.textContent = original;
+                    submitBtn.disabled = false;
+                }, 4000);
+            }
+        });
+    </script>
+</body>
+</html>
