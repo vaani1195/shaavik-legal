@@ -588,9 +588,20 @@
             gap: 24px;
         }
 
-        /* Centre a lone orphan card on the last row (7 items in 3 columns => 7th is alone) */
-        .services-grid > .service-card:last-child:nth-child(3n+1) {
-            grid-column: 2;
+        /* Desktop (3-col): centre orphan card in middle column */
+        @media (min-width: 1025px) {
+            .services-grid > .service-card:last-child:nth-child(3n+1) {
+                grid-column: 2;
+            }
+        }
+
+        /* Tablet & mobile: render the orphan IP card as a compact centred card */
+        @media (max-width: 1024px) {
+            .services-grid:not(.individuals) > .service-card:last-child {
+                grid-column: 1 / -1;
+                max-width: 320px;
+                justify-self: center;
+            }
         }
 
         .services-grid.individuals {
