@@ -597,15 +597,6 @@
             }
         }
 
-        /* Tablet & mobile: render the orphan IP card as a compact centred card */
-        @media (max-width: 1024px) {
-            .services-grid:not(.individuals) > .service-card:last-child {
-                grid-column: 1 / -1;
-                max-width: 320px;
-                justify-self: center;
-            }
-        }
-
         .services-grid.individuals {
             grid-template-columns: repeat(2, 1fr);
             max-width: 800px;
