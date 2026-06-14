@@ -221,7 +221,7 @@
         }
 
         .brand-logo {
-            height: 72px;
+            height: 115px;
             width: auto;
             display: block;
             transition: opacity 0.2s var(--ease);
@@ -338,7 +338,7 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.05fr 1fr;
+            grid-template-columns: 1fr 1.05fr;
             gap: 80px;
             align-items: center;
             position: relative;
@@ -373,6 +373,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px 28px;
+            grid-auto-rows: minmax(40px, auto);
             align-items: start;
         }
 
@@ -427,16 +428,7 @@
             pointer-events: none;
         }
 
-        /* Subtle inner gold corner accents */
-        .hero-visual::before {
-            content: '';
-            position: absolute;
-            inset: 10px;
-            border: 1px solid rgba(212, 166, 74, 0.12);
-            border-radius: 6px;
-            pointer-events: none;
-            z-index: 1;
-        }
+
 
         /* =========================
            About
@@ -1223,12 +1215,6 @@
                             <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
                             </svg>
-                            Business Legal Support
-                        </li>
-                        <li>
-                            <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/>
-                            </svg>
                             Payment Recovery
                         </li>
                         <li>
@@ -1605,7 +1591,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-answer-inner">
-                                We provide practical support for a range of business and legal matters, including commercial contracts, business disputes, payment recovery, commercial leases and tenancy matters, copyright and trademark support, immigration matters and family-related issues. If you are unsure whether we can assist, please get in touch for an initial discussion.
+                                We provide practical support across a range of business and legal matters, including contracts, disputes, payment recovery, commercial leases and tenancy matters, intellectual property support, immigration matters and family-related issues. If you are unsure whether we can assist, please get in touch for an initial discussion.
                             </div>
                         </div>
                     </div>
